@@ -13,7 +13,8 @@ _kc_asdf_custom_source_build() {
   kc_asdf_commands "go"
   go build \
     -p "$concurrency" -o "$output/bin/$KC_ASDF_APP_NAME" \
-    -ldflags "-X version.Version=0.0.0-$version version.GitCommit=$version" ./cmd/gomplate
+    -ldflags "-X version.Version=0.0.0-$version -X version.GitCommit=$version" \
+    ./cmd/gomplate
 }
 
 ## -----------------------
